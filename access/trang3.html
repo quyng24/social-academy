@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You is User</title>
+    <style>
+        li {
+            width: 80%;
+            min-height: 50vh;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+        }
+        #tus-list {
+            width: 100%;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>You is User</h1>
+    <h1>Bài đăng gần đây</h1>
+    <ul id="tus-list"></ul>
+    <script>
+        let courses = JSON.parse(localStorage.getItem('courses')) || [];
+        let courseList = document.getElementById('tus-list');
+        function deleteCourse(index) {
+            courses.splice(index, 1);
+            localStorage.setItem('courses', JSON.stringify(courses));
+            displayCourses();
+        }
+        function displayCourses() {
+            courseList.innerHTML = '';
+            courses.forEach(function(course, index) {
+                let listItem = document.createElement('li');
+                listItem.textContent = course.title + ": " + course.description;
+                let deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Xóa';
+                deleteButton.style.marginLeft = '10px';
+                deleteButton.onclick = function() {
+                    deleteCourse(index);
+                };
+                listItem.appendChild(deleteButton);
+                courseList.appendChild(listItem);
+            });
+        }
+        displayCourses();
+
+    </script>
+</body>
+</html>

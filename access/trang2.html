@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You is Admin</title>
+</head>
+<body>
+    <h1>You is Admin</h1>
+    <h1>Thêm bài đăng mới</h1>
+    <form id="courseForm">
+        <label for="courseTitle">Thêm caption:</label>
+        <input type="text" id="courseTitle" required>
+        <br>
+        <label for="courseDescription">Nội dung bài đăng:</label>
+        <textarea id="courseDescription" required></textarea>
+        <br>
+        <button type="submit">Đăng</button>
+    </form>
+    <script>
+        document.getElementById('courseForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let title = document.getElementById('courseTitle').value;
+        let description = document.getElementById('courseDescription').value;
+        let course = {
+            title: title,
+            description: description
+        };
+        let courses = JSON.parse(localStorage.getItem('courses')) || [];
+        courses.push(course);
+        localStorage.setItem('courses', JSON.stringify(courses));
+        alert('Khóa học đã được thêm thành công!');
+        document.getElementById('courseTitle').value = '';
+        document.getElementById('courseDescription').value = '';
+    });
+
+    </script>
+</body>
+</html>

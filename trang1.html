@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Đăng Nhập</title>
+    <link rel="stylesheet" href="./access/style2.css">
+</head>
+<body>
+    <div class="not-loaded">
+        <h1 class="welcome-qbook">Welcome to Qbook Academy</h1>
+        <div class="container">
+            <div class="formBox">
+                <div class="buttonBox">
+                    <div id="btn"></div>
+                    <button type="button" class="toggleBtn" onclick="login()">Log in</button>
+                    <button type="button" class="toggleBtn" onclick="register()">Register</button>
+                </div>
+                <form action="" class="inputGroup" id="login">
+                    <input type="text" id="in-name" class="input-field" placeholder="Enter you name" required>
+                    <input type="password" id="in-password" class="input-field" placeholder="Enter you password" required>
+                    <input type="checkbox" class="input-checkBox" id=""><span>Remember password</span>
+                    <button type="submit" class="submit_btn">Log in</button>
+                </form>
+                <form action="" class="inputGroup" id="register">
+                    <input type="text" class="input-field" placeholder="Enter you name" required>
+                    <input type="email" class="input-field" placeholder="Enter you email" id="" required>
+                    <input type="password" class="input-field" placeholder="Enter you password" required>
+                    <input type="checkbox" class="input-checkBox" id=""><span>I agree to the terms & conditions</span>
+                    <button type="submit" class="submit_btn">Register</button>
+                </form>
+            </div>
+        </div>   
+    </div>
+    <div class="night">
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+    </div>
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+
+        function register () {
+            x.style.left = "-400px";
+            y.style.left = "60px";
+            z.style.left = "110px";
+        }
+        function login () {
+            x.style.left = "60px";
+            y.style.left = "450px";
+            z.style.left = "0";
+        }
+        document.getElementById("login").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const userName = document.getElementById("in-name").value;
+        const passWord = document.getElementById("in-password").value;
+        if (userName === "Admin" && passWord === "1234") {
+            window.location.href = "./access/trang2.html";
+        } else if (userName === "User" && passWord === "121212") {
+            window.location.href = "./access/trang3.html";
+        } else {
+            alert("Bạn không có quyền truy cập");
+        }
+        });
+    </script>
+</body>
+</html>
