@@ -46,7 +46,7 @@ section::after {
     z-index: 10000;
     mix-blend-mode: color;
 }
-#text {
+#text-hu {
     position: relative;
     color: #fff;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -65,15 +65,21 @@ section::after {
     color: #fff;
     margin-top: 5%;
 }
+.convert-card {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 70vh;
+}
 .card {
     position: relative;
-    width: 300px;
-    height: 400px;
+    width: 22%;
+    height: 470px;
     background: linear-gradient(to top, #0a5894, transparent);
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid #999;
-    margin: 10% 5% 10% 5%;
+    margin: 10% 2%;
   }
   
 .imgbx {
@@ -182,7 +188,6 @@ section::after {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    /* padding: 60px 0; */
     gap: 60px;
 }
 .container-course .box {
@@ -190,8 +195,6 @@ section::after {
     width: 300px;
     height: 350px;
     background: #2e2e2e;
-    justify-content: center;
-    align-items: center;
 }
 .container-course .box .content-cs {
     position: relative;
@@ -201,14 +204,13 @@ section::after {
     flex-direction: column;
     text-align: center;
     gap: 20px;
-    padding: 0 20px;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 .container-course .box .content-cs .icon-cs {
     color: var(--clr);
-    width: 80px;
+    width: 35%;
     height: 80px;
     box-shadow: 0 0 0 4px #2e2e2e, 0 0 0 6px var(--clr);
     display: flex;
@@ -281,4 +283,61 @@ section::after {
 .container-course .box:hover::after {
     transform: skew(0deg);
     inset: 40px -10px;
+}
+/* Mobile: width < 740px */
+@media only screen and (max-width: 46.1875em) {
+    #text-hu {
+        font-size: 40px;
+    }
+    .text-introduce {
+        font-size: 20px;
+    }
+    .convert-card {
+        display: block;
+        margin: 20px 9%;
+    }    
+    .card {
+        width: 80%;
+        height: 350px;
+        margin: 20% 12% 25% 12%;
+    }
+    .container-course .box {
+        width: 240px;
+    }
+    .container-course .box .content-cs .text-cs h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .container-course .box .content-cs .text-cs p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+}
+/* Table: width >= 740px and width < 1024px */
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    #text-hu {
+        font-size: 80px;
+    }
+    .text-introduce {
+        font-size: 40px;
+    }
+    .convert-card {
+        margin: 20px 9%;
+    }    
+    .card {
+        width: 80%;
+        height: 350px;
+    }
+    .container-course .box {
+        width: 260px;
+    }
+    .container-course .box .content-cs .text-cs h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .container-course .box .content-cs .text-cs p {
+        font-size: 16px;
+        line-height: 20px;
+    }
 }
