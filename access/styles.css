@@ -181,8 +181,9 @@ section::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
+    min-height: 120vh;
     margin: 10% 0 10% 0;
+    transition: 0.1s ease-in-out;
 }
 .text-course h2 {
     color: #fff;
@@ -298,6 +299,28 @@ section::after {
 .container-course .box:hover::after {
     transform: skew(0deg);
     inset: 40px -10px;
+}
+@layer componont {
+    .text-introduce {
+        animation: 1s ease-in-out;
+        animation-timeline: view();
+        /* animation-range: entry; */
+    }
+    .text-introduce {
+        animation-name: blurFadeIn;
+    }
+}
+@keyframes blurFadeIn {
+    0% {
+        transform: scale(2);
+        opacity: 0;
+        /* filter: blur(5px); */
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        /* filter: blur(0); */
+    }
 }
 /* Mobile: width < 740px */
 @media only screen and (max-width: 46.1875em) {
