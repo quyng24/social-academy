@@ -8,6 +8,16 @@ body {
     background: #0a2a43;
     min-height: 1500px;
 }
+.heading-top {
+    color: #fff;
+    margin: 30% 0 0 10%;
+}
+.heading-top h1 {
+    font-size: 50px;
+}
+.heading-top .description {
+    font-size: 30px;
+}
 .text-introduce {
     display: flex;
     justify-content: center;
@@ -249,29 +259,34 @@ body {
     transform: skew(0deg);
     inset: 40px -10px;
 }
+.left-to-right {
+    transform: translateX(-100%);
+    transition: 1s;
+}
+.left-to-right.start {
+    transform: translateX(0);
+}
+.right-to-left {
+    transform: translate(200%);
+    transition: 1s;
+}
+.right-to-left.start {
+    transform: translateX(0);
+}
+.zoom {
+    transform: scale(0);
+    transition: 1s;
+}
+.zoom.start {
+    transform: scale(1);
+}
 @layer componont {
-    .text-course h2,
-    .text-course p {
-        animation: 0.5s ease-in-out;
-        animation-timeline: view();
-    }
-    .text-course h2,
-    .text-course p {
-        animation-name: textOutLeft;
-    }
     .text-introduce {
         animation: 0.5s ease-in-out;
         animation-timeline: view();
     }
     .text-introduce {
         animation-name: blurFadeIn;
-    }
-    .container-course {
-        animation: 0.5s ease;
-        animation-timeline: view();
-    }
-    .container-course {
-        animation-name: opaCity;
     }
 }
 @keyframes blurFadeIn {
@@ -284,24 +299,6 @@ body {
         transform: scale(1);
         opacity: 1;
         filter: blur(0);
-    }
-}
-@keyframes textOutLeft {
-    0% {
-        transform: translateX(-90%);
-    }
-    100% {
-        transform: translateX(10%);
-    }
-}
-@keyframes opaCity {
-    0% {
-        opacity: 0;
-        transform: scale(60%);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(100%);
     }
 }
 /* Mobile: width < 740px */
