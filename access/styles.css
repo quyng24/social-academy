@@ -11,6 +11,7 @@ body {
 .heading-top {
     color: #fff;
     margin: 30% 0 0 10%;
+    height: 50vh;
 }
 .heading-top h1 {
     font-size: 50px;
@@ -303,8 +304,11 @@ body {
 }
 /* Mobile: width < 740px */
 @media only screen and (max-width: 46.1875em) {
-    #text-hu {
-        font-size: 40px;
+    body {
+        margin-left: -8px;
+    }
+    .heading-top {
+        height: 100vh;
     }
     .text-introduce {
         font-size: 20px;
@@ -343,13 +347,12 @@ body {
         font-size: 16px;
         margin-bottom: 30%;
     }
-    
+    .left-to-right {
+        transform: translateX(-150%);
+    }
 }
 /* Table: width >= 740px and width < 1024px */
 @media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
-    #text-hu {
-        font-size: 80px;
-    }
     .text-introduce {
         font-size: 40px;
     }
